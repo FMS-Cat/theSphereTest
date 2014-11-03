@@ -72,9 +72,6 @@ varying float var_spe1;
 varying float var_dif2;
 varying float var_spe2;
 uniform float uni_t;
-uniform vec2 uni_s;
-uniform vec2 uni_m;
-uniform sampler2D texture;
 uniform int uni_p;
 
 float rnd(float _s)
@@ -298,7 +295,6 @@ void main()
 					gl.uniformMatrix4fv(gl.getUniformLocation(prg,'uni_matVP'),false,uni_matVP);
 
 					gl.uniform1f(gl.getUniformLocation(prg,'uni_t'),t);
-					gl.uniform2fv(gl.getUniformLocation(prg,'uni_s'),[c.width,c.height]);
 
 					gl.uniform1i(gl.getUniformLocation(prg,'uni_p'),0);
 					gl.drawElements(gl.TRIANGLES,mark[0],gl.UNSIGNED_SHORT,0);
